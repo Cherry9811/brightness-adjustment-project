@@ -11,7 +11,6 @@ while True:
     if pir.value() == 1:
         print("Motion detected")
     else:
-        last_trigger = 0
         print("No motion detected")
 
     time.sleep(1)
