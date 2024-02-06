@@ -1,16 +1,19 @@
-import time
 from machine import Pin
-
-pir = Pin('P18',mode=Pin.IN, pull=Pin.PULL_UP)
-last_motion = -5
-
+import time
+ 
+pir = Pin(4, Pin.IN, Pin.PULL_DOWN)
+ 
+print('Starting up the PIR Module')
+time.sleep(1)
+print('Ready')
+ 
 while True:
-    if pir() == 1:
-        if time.time() - last_motion > 5:
-            last_motion = time.time()
-            print("Motion detected")
+    if pir.value() == 1:
+        print("Motion detected")
     else:
         last_trigger = 0
         print("No motion detected")
 
-    time.sleep(5)
+    time.sleep(1)
+
+     
