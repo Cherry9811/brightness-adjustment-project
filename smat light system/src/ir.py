@@ -40,14 +40,17 @@ while True:
         led.duty_u16(high_brightness)
         led2.duty_u16(high_brightness)
         led3.duty_u16(low_brightness)
+        utime.sleep(20)
     elif motion_ir2:
         led.duty_u16(low_brightness)
         led2.duty_u16(high_brightness)
         led3.duty_u16(high_brightness)
+        utime.sleep(20)
     elif motion_ir3:
         led.duty_u16(low_brightness)
         led2.duty_u16(high_brightness)
         led3.duty_u16(high_brightness)
+        utime.sleep(20)
     elif button_pressed:
         print("pressed")
         led.duty_u16(high_brightness)
@@ -61,6 +64,3 @@ while True:
         led.duty_u16(low_brightness)
         led2.duty_u16(low_brightness)
         led3.duty_u16(low_brightness)
-
-    time.sleep(0.1)  
-
